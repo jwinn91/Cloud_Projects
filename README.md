@@ -1,15 +1,17 @@
 # Building a SOC + Honeynet in Azure (Live Traffic)
-![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
+![image](https://github.com/jwinn91/Cloud_Projects/assets/103306552/16b317d2-82f3-4fa5-b431-d2ae5bd5d13b)
 
 ## Introduction
 
-In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
+In this project, I built a mini honeynet in Azure and ingested log sources from various resources into Azures Log Analytics workspace. Using KQL queries and Microsoft Sentinel to build attack maps, i was able to geo-locate different alerts, and create incidents that i later worked throught and remediated using NIST 800-61 as my guideline. I measured and collected security metrics in the insecure environment for 24 hours which shows metrics for Windows security events as well as Syslog for Linux that shows logon attempts from different areas around the globe as depicted on the live attack maps.
+
+After running the insecure enviorment for 24 hours, i went back and hardened my enviorment by going through and remediating vunlerable network security groups and exposed ports and protocols as well as locking down the subent they were in. I studied the affects of it for another 24 hours to see how the metrics played out and what alerts if any were left to be tirgered by defender for cloud, and Microsoft Sentinel, the reporting logs and events are as follows:
 
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
 - SecurityAlert (Log Analytics Alerts Triggered)
 - SecurityIncident (Incidents created by Sentinel)
-- AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
+- AzureNetworkAnalytics_CL (Malicious Flows allowed into honeynet)
 
 ## Architecture Before Hardening / Security Controls
 ![Architecture Diagram](https://i.imgur.com/aBDwnKb.jpg)
