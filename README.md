@@ -3,9 +3,9 @@
 
 ## Introduction
 
-In this project, I built a mini honeynet in Azure and ingested log sources from various resources into Azures Log Analytics workspace. Using KQL queries and Microsoft Sentinel to build attack maps, i was able to geo-locate different alerts, and create incidents that i later worked throught and remediated using NIST 800-61 as my guideline. I measured and collected security metrics in the insecure environment for 24 hours which shows metrics for Windows security events as well as Syslog for Linux that shows logon attempts from different areas around the globe as depicted on the live attack maps.
+In this project, I built a mini honeynet in Azure and ingested log sources from various resources into Azures Log Analytics workspace. Using KQL queries and Microsoft Sentinel to build attack maps, i was able to geo-locate different alerts, and log incidents that I later worked through, and remediated using NIST 800-61 as my guideline. I measured and collected security metrics in the insecure environment for 24 hours which shows metrics for Windows security events as well as Syslog for Linux that shows logon attempts from different areas around the globe as depicted on the live attack maps.
 
-After running the insecure enviorment for 24 hours, i went back and hardened my enviorment by going through and remediating vunlerable network security groups and exposed ports and protocols as well as locking down the subent they were in. I studied the affects of it for another 24 hours to see how the metrics played out and what alerts if any were left to be tirgered by defender for cloud, and Microsoft Sentinel, the reporting logs and events are as follows:
+After running the insecure enviorment for 24 hours, I went back and hardened my enviorment by going through and remediating vunlerable network security groups and exposed ports and protocols on virtual Machines as well as locking down the subent they were in. I studied the affects of it for another 24 hours to see how the metrics changed, and what alerts, if any were left to be tirgered by defender for cloud, and Microsoft Sentinel. The reporting logs and events are as follows:
 
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
