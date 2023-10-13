@@ -41,6 +41,8 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 [Linux Syslog Auth Failures]![image](https://github.com/jwinn91/Cloud_Projects/assets/103306552/992e5294-623d-4433-a17e-c5c401d2a1a1)<br>
 [Windows RDP/SMB Auth Failures]![image](https://github.com/jwinn91/Cloud_Projects/assets/103306552/359cfdc9-a3ac-4e60-ba99-f57934e97a13)<br>
 [My SQL Auth Failures]![image](https://github.com/jwinn91/Cloud_Projects/assets/103306552/2d157c56-f247-4368-8cc1-ee6d5b676a10)<br>
+[KQL query showing Failed log-ons from attackers on Windows VM's using different Usernames]<img width="956" alt="image" src="https://github.com/jwinn91/Cloud_Projects/assets/103306552/2f1b9bef-2455-4bca-9701-04895fb6af12">
+
 
 
 ## Metrics Before Hardening / Security Controls
