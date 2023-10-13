@@ -37,7 +37,7 @@ For the "BEFORE" metrics, all resources were originally deployed, and exposed to
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of any traffic that came from my workstaion. To effectively harden the enviorment after the collection period, I went through my enviroment and locked down the open ports and protocols on my virtual machines, as well as my SQL Server that were internet exposed. I aslo spent time working on other enviroment vulnerabilites in my enviroment using microsoft Defender for Cloud regulatory compliance, and NIST 800-53 R.5 framework that I intergrated in Azure to effectively mitiage the current insecure issues with my virtual machines and SQL server, as well as other areas of attention within my cloud enviroment. 
 
 ## Attack Maps Before Hardening / Security Controls
-[Malicious NSG Allowed In]![image](https://github.com/jwinn91/Cloud_Projects/assets/103306552/2a70aa25-64fa-42aa-aed1-086457d8dcad)<br>
+[Malicious NSG Allowed In]<img width="1025" alt="image" src="https://github.com/jwinn91/Cloud_Projects/assets/103306552/e37b10d3-a946-4e79-be46-537c4ce78d24"><br>
 [Linux Syslog Auth Failures]![image](https://github.com/jwinn91/Cloud_Projects/assets/103306552/992e5294-623d-4433-a17e-c5c401d2a1a1)<br>
 [Windows RDP/SMB Auth Failures]![image](https://github.com/jwinn91/Cloud_Projects/assets/103306552/359cfdc9-a3ac-4e60-ba99-f57934e97a13)<br>
 [My SQL Auth Failures]![image](https://github.com/jwinn91/Cloud_Projects/assets/103306552/2d157c56-f247-4368-8cc1-ee6d5b676a10)<br>
