@@ -3,9 +3,10 @@
 
 ## Introduction
 
-In this project, I built a mini honeynet in Azure and ingested log sources from various resources into Azures Log Analytics workspace. Using KQL queries and Microsoft Sentinel to build attack maps, i was able to geo-locate different alerts, and log incidents that I later worked through, and remediated using NIST 800-61 as my guideline. I measured and collected security metrics in the insecure environment for 24 hours which shows metrics for Windows security events as well as Syslog for Linux that shows logon attempts from different areas around the globe as depicted on the live attack maps.
+In this project, I built a mini honeynet in Azure and ingested log sources from various resources into Azures Log Analytics workspace. Using KQL queries and Microsoft Sentinel to build attack maps, I was able to geo-locate different alerts and log incidents that I later worked through and remediated using NIST 800-61 as my guideline. I measured and collected security metrics in the insecure environment for 24 hours which shows metrics for Windows security events as well as Syslog for Linux that shows logon attempts from different areas around the globe as depicted on the live attack maps.
 
-After running the insecure enviorment for 24 hours, I went back and hardened my enviorment by going through and remediating vunlerable network security groups and exposed ports and protocols on virtual Machines as well as locking down the subent they were in. I studied the affects of it for another 24 hours to see how the metrics changed, and what alerts, if any were left to be tirgered by defender for cloud, and Microsoft Sentinel. The reporting logs and events are as follows:
+After running the insecure environment for 24 hours, I went back and hardened my environment by going through and remediating vulnerable network security groups and exposed ports as well as exposed protocols on my virtual Machines as well as locking down the subnet they were in. I studied the effects of it for another 24 hours to see how the metrics changed, and what alerts, if any were left to be triggered by Defender for Cloud, and Microsoft Sentinel. The reporting logs and events are as follows:
+
 
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
@@ -32,9 +33,9 @@ The architecture of the mini honeynet in Azure consists of the following compone
 
 
 
-For the "BEFORE" metrics, all resources were originally deployed, and exposed to the internet through ports and protocols such as RDP and SSH with Any/Any rules set in the virtual Machines so that it would not limit where the traffic would be coming from. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources such as the keyvault for my Azure tenant as well as the blob storage were also exposed.
+For the "BEFORE" metrics, all resources were originally deployed, and exposed to the internet through ports and protocols such as RDP and SSH with Any/Any rules set in the virtual Machines so that it would not limit where the traffic would be coming from. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources such as the key vault for my Azure tenant as well as the blob storage were also exposed.
 
-For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of any traffic that came from my workstaion. To effectively harden the enviorment after the collection period, I went through my enviroment and locked down the open ports and protocols on my virtual machines, as well as my SQL Server that were internet exposed. I aslo spent time working on other enviroment vulnerabilites in my enviroment using microsoft Defender for Cloud regulatory compliance, and NIST 800-53 R.5 framework that I intergrated in Azure to effectively mitiage the current insecure issues with my virtual machines and SQL server, as well as other areas of attention within my cloud enviroment. 
+For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic except any traffic that came from my workstation. To effectively harden the environment after the collection period, I went through my environment and locked down the open ports and protocols on my virtual machines, as well as my SQL Server that were internet exposed. I also spent time working on other environmental vulnerabilities in my environment using Microsoft Defender for Cloud regulatory compliance, and NIST 800-53 R.5 framework that I integrated in Azure to effectively manage the current insecure issues with my virtual machines and SQL server, as well as other areas of attention within my cloud environment.
 
 ## Attack Maps Before Hardening / Security Controls
 [Malicious NSG Allowed In]<img width="1025" alt="image" src="https://github.com/jwinn91/Cloud_Projects/assets/103306552/e37b10d3-a946-4e79-be46-537c4ce78d24"><br>
@@ -84,6 +85,6 @@ Stop Time	2023-10-09T12:26:03
 
 ## Conclusion
 
-In this project, a mini honeynet was constructed in Microsoft Azure and log sources were integrated into a Log Analytics workspace. Microsoft Sentinel was employed to trigger alerts and create incidents based on the ingested logs. Additionally, metrics were measured in the insecure environment before security controls were applied, and then again after implementing security measures. It is noteworthy that the number of security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness.
+In this project, a mini honeynet was constructed in Microsoft Azure, and log sources were integrated into a Log Analytics workspace. Microsoft Sentinel was employed to trigger alerts and create incidents based on the ingested logs. Additionally, metrics were measured in the insecure environment before security controls were applied, and then again after implementing security measures. It is noteworthy that the number of security events and incidents was drastically reduced after the security controls were applied, demonstrating their effectiveness.
 
-It is worth noting that if the resources within the network were heavily utilized by regular users, it is likely that more security events and alerts may have been generated within the 24-hour period following the implementation of the security controls.
+It is worth noting that if the resources within the network were heavily utilized by regular users, it is likely that more security events and alerts may have been generated within the 24 hours following the implementation of the security controls.
